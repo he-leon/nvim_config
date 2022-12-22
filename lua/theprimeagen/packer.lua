@@ -4,7 +4,7 @@ vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'chrisbra/SudoEdit.vim'
+  use 'lambdalisue/suda.vim'
   use 'wbthomason/packer.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
