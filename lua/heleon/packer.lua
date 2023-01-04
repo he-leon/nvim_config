@@ -4,8 +4,9 @@ vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'lambdalisue/suda.vim'
     use 'wbthomason/packer.nvim'
+    use 'lambdalisue/suda.vim'
+    use 'alexghergh/nvim-tmux-navigation'
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
     use {

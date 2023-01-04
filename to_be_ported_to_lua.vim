@@ -15,7 +15,19 @@ autocmd FileType python nnoremap <Leader>f :Black<CR>
 " Select next buffer with Tab
 nnoremap  <Tab> :bn<CR>
 " Use Ctrl-hjkl for window navigation
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+function! TmuxMove(direction)
+        let wnr = winnr()
+        silent! execute 'wincmd ' . a:direction
+        " If the winnr is still the same after we moved, it is the last pane
+        if wnr == winnr()
+                call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
+        end
+endfunction
+
+
+nnoremap <silent> <M-h> <Cmd>NvimTmuxNavigateLeft<CR>
+nnoremap <silent> <M-j> <Cmd>NvimTmuxNavigateDown<CR>
+nnoremap <silent> <M-k> <Cmd>NvimTmuxNavigateUp<CR>
+nnoremap <silent> <M-l> <Cmd>NvimTmuxNavigateRight<CR>
+nnoremap <silent> <M-\> <Cmd>NvimTmuxNavigateLastActive<CR>
+nnoremap <silent> <M-Space> <Cmd>NvimTmuxNavigateNext<CR>
