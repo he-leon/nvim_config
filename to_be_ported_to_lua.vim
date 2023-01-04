@@ -14,17 +14,7 @@ nnoremap ,p iimport IPython; IPython.embed()
 autocmd FileType python nnoremap <Leader>f :Black<CR>
 " Select next buffer with Tab
 nnoremap  <Tab> :bn<CR>
-" Use Ctrl-hjkl for window navigation
-function! TmuxMove(direction)
-        let wnr = winnr()
-        silent! execute 'wincmd ' . a:direction
-        " If the winnr is still the same after we moved, it is the last pane
-        if wnr == winnr()
-                call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
-        end
-endfunction
-
-
+" Use Alt-hjkl and seamless tmux integration for window navigation
 nnoremap <silent> <M-h> <Cmd>NvimTmuxNavigateLeft<CR>
 nnoremap <silent> <M-j> <Cmd>NvimTmuxNavigateDown<CR>
 nnoremap <silent> <M-k> <Cmd>NvimTmuxNavigateUp<CR>
