@@ -12,6 +12,8 @@ imap jj <Esc>
 nnoremap ,p iimport IPython; IPython.embed()
 " Use Black for formatting Python
 autocmd FileType python nnoremap <Leader>f :Black<CR>
+" Use FormatJson for formatting Python
+autocmd FileType json nnoremap <Leader>f :call FormatJson()<CR>
 " Select next buffer with Tab
 nnoremap  <Tab> :bn<CR>
 " Use Alt-hjkl and seamless tmux integration for window navigation
@@ -21,3 +23,18 @@ nnoremap <silent> <M-k> <Cmd>NvimTmuxNavigateUp<CR>
 nnoremap <silent> <M-l> <Cmd>NvimTmuxNavigateRight<CR>
 nnoremap <silent> <M-\> <Cmd>NvimTmuxNavigateLastActive<CR>
 nnoremap <silent> <M-Space> <Cmd>NvimTmuxNavigateNext<CR>
+
+function! FormatJson()
+python << EOF
+import vim
+import json
+try:
+    buf = vim.current.buffer
+    json_content = '\n'.join(buf[:])
+    content = json.loads(json_content)
+    sorted_content = json.dumps(content, indent=4, sort_keys=True)
+    buf[:] = sorted_content.split('\n')
+except Exception as e:
+    print(e)
+EOF
+endfunction

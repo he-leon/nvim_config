@@ -3,7 +3,8 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'pyright'
+    'pyright',
+    'sumneko_lua',
 })
 
 -- Fix Undefined global 'vim'
