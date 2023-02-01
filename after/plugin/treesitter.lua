@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust", "python" },
+  ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust", "python", "qmljs" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -21,3 +21,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- qml files are not correctly recognized without setting this
+local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
+ft_to_parser.qml = "qmljs" 

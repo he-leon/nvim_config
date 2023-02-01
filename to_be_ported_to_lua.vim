@@ -24,6 +24,7 @@ nnoremap <silent> <M-l> <Cmd>NvimTmuxNavigateRight<CR>
 nnoremap <silent> <M-\> <Cmd>NvimTmuxNavigateLastActive<CR>
 nnoremap <silent> <M-Space> <Cmd>NvimTmuxNavigateNext<CR>
 
+" Simple JSON formatting function
 function! FormatJson()
 python << EOF
 import vim
@@ -38,3 +39,7 @@ except Exception as e:
     print(e)
 EOF
 endfunction
+
+" Correctly detect qml filetype
+au BufRead,BufNewFile *.qml set filetype=qml
+
