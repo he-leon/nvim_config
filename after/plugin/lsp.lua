@@ -4,11 +4,10 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'pyright',
-    'sumneko_lua',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua-language-server', {
     settings = {
         Lua = {
             diagnostics = {
@@ -17,8 +16,6 @@ lsp.configure('sumneko_lua', {
         }
     }
 })
-
-
 
 
 local cmp = require('cmp')

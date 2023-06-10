@@ -42,4 +42,3 @@ endfunction
 
 " Correctly detect qml filetype
 au BufRead,BufNewFile *.qml set filetype=qml
-
