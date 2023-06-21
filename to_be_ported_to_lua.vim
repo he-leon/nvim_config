@@ -42,3 +42,5 @@ endfunction
 
 " Correctly detect qml filetype
 au BufRead,BufNewFile *.qml set filetype=qml
+" Use cpp lsp for Arduino files
+au BufRead,BufNewFile *.ino set filetype=cpp
