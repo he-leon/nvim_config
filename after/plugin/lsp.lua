@@ -4,6 +4,12 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'pyright',
+    'bashls',
+    'clangd',
+    'eslint',
+    'lua_ls',
+    'pyright',
+    'tsserver',
 })
 
 -- Fix Undefined global 'vim'
