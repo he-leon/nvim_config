@@ -13,21 +13,28 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to clipboard" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "d", [["_d]], { desc = "Dont yank deleted text to register" })
 
 -- Format code
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format code" })
 
 -- Ctrl-s to save
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make executable" })
 
 -- Closes buffer without closing window.
 vim.keymap.set("n", "qq", ":bp<bar>sp<bar>bn<bar>bd<CR>")
 
 vim.cmd 'source ~/.config/nvim/to_be_ported_to_lua.vim'
+
+-- Show diagnostics popup
+vim.keymap.set('n', '<space>e', '<cmd>lua vim.diagnostic.open_float({"line"})<CR>', { noremap=true, silent=true , desc="Show diagnostics popup"})
+
+
+-- Show undo tree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Show undo tree" })
