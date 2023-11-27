@@ -10,8 +10,6 @@ vnoremap -% :s/^%//g<cr>
 imap jj <Esc>
 " Shortcut to insert IPython debug import
 nnoremap ,p iimport IPython; IPython.embed()
-" Use Black for formatting Python
-autocmd FileType python nnoremap <Leader>f :Black<CR>
 " Use FormatJson for formatting Python
 autocmd FileType json nnoremap <Leader>f :call FormatJson()<CR>
 " Select next buffer with Tab
