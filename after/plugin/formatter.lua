@@ -9,6 +9,21 @@ require("formatter").setup {
   log_level = vim.log.levels.WARN,
   -- All formatter configurations are opt-in
   filetype = {
+    sh = {
+      function()
+        return {
+          exe = "shfmt",
+          args = {
+            "-i",
+            "4",
+            "-bn",
+            "-ci",
+            "-sr"
+          },
+          stdin = true,
+        }
+      end
+    },
     htmldjango = {
       function()
         return {
