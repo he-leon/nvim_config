@@ -9,6 +9,18 @@ require("formatter").setup {
   log_level = vim.log.levels.WARN,
   -- All formatter configurations are opt-in
   filetype = {
+    python = {
+      function()
+        return {
+          exe = "black",
+          args = {
+            "--quiet",
+            "-"
+          },
+          stdin = true,
+        }
+      end
+    },
     sh = {
       function()
         return {

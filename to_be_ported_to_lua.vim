@@ -22,6 +22,9 @@ nnoremap <silent> <M-l> <Cmd>NvimTmuxNavigateRight<CR>
 nnoremap <silent> <M-\> <Cmd>NvimTmuxNavigateLastActive<CR>
 nnoremap <silent> <M-Space> <Cmd>NvimTmuxNavigateNext<CR>
 
+nnoremap <silent> <M-V> <C-w>v
+nnoremap <silent> <M-M> <C-w>s
+
 " Simple JSON formatting function
 function! FormatJson()
 python << EOF
