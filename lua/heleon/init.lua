@@ -1,5 +1,6 @@
 require("heleon.set")
 require("heleon.remap")
+require("heleon.lazy")
 
 local autocmd = vim.api.nvim_create_autocmd
 

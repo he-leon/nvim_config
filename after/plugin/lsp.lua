@@ -2,18 +2,8 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'pyright',
-    'bashls',
-    'clangd',
-    'eslint',
-    'lua_ls',
-    'pyright',
-    'tsserver',
-})
-
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -33,7 +23,7 @@ local cmp = require('cmp')
 --    ['<C-y>'] = cmp.mapping.confirm({ select = true })
 --})
 
-lsp.setup_nvim_cmp({
+cmp.setup({
     --  mapping = cmp_mappings
     --  Mappings from  nvchad
     mapping = {
