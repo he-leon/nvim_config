@@ -12,8 +12,9 @@ imap jj <Esc>
 nnoremap ,p iimport IPython; IPython.embed()
 " Use FormatJson for formatting Python
 autocmd FileType json nnoremap <Leader>f :call FormatJson()<CR>
-" Select next buffer with Tab
+" Select next/pref buffer with (CTRL+)Tab
 nnoremap  <Tab> :bn<CR>
+nnoremap  <S-Tab> :bp<CR>
 " Use Alt-hjkl and seamless tmux integration for window navigation
 nnoremap <silent> <M-h> <Cmd>NvimTmuxNavigateLeft<CR>
 nnoremap <silent> <M-j> <Cmd>NvimTmuxNavigateDown<CR>

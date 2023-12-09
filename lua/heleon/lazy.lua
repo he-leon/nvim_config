@@ -27,6 +27,11 @@ require('lazy').setup({
     "github/copilot.vim",
     'mhartington/formatter.nvim',
     {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { {"nvim-lua/plenary.nvim"} }
+    },
+    {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
