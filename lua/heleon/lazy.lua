@@ -20,7 +20,6 @@ require('lazy').setup({
     "folke/zen-mode.nvim",
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/playground',
-    'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'psf/black',
