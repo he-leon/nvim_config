@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     'lambdalisue/suda.vim', 
-    'alexghergh/nvim-tmux-navigation',
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     "folke/zen-mode.nvim",
@@ -25,6 +24,9 @@ require('lazy').setup({
     'psf/black',
     "github/copilot.vim",
     'mhartington/formatter.nvim',
+    'f-person/git-blame.nvim',
+    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
+    {'alexghergh/nvim-tmux-navigation', lazy = false},
     {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

@@ -65,8 +65,10 @@ cmp.setup({
 
 })
 
+-- Set log level
+
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
@@ -74,6 +76,9 @@ lsp.set_preferences({
         info = 'I'
     }
 })
+vim.lsp.set_log_level("debug")
+
+
 
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
